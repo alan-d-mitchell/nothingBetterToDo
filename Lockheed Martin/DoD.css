@@ -8,7 +8,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: url('pete-hegseth.webp') no-repeat center center fixed;
-    background-size: cover;
+    background-size: 200%; /* Zoomed-in Pete for maximum impact */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,118 +16,186 @@ body {
     color: #fff;
     position: relative;
     overflow: hidden;
+    animation: peteZoom 5s infinite alternate, peteSpin 20s infinite linear;
 }
 
-/* Gradient Overlay for Depth */
+/* Insane Gradient Overlay */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7), rgba(255, 255, 255, 0.7));
     z-index: 1;
+    animation: gradientShift 2s infinite;
 }
 
-/* Modern Header */
+/* Extra Pete Overlay for Chaos */
+.pete-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('pete-hegseth.webp') center center;
+    background-size: 50%; /* Smaller, repeating Pete faces */
+    opacity: 0.3;
+    z-index: 1;
+    animation: peteFlash 1s infinite, peteMove 3s infinite;
+}
+
+/* Header on Steroids */
 .header {
     position: absolute;
     top: 0;
     width: 100%;
     padding: 20px;
     z-index: 2;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
 }
 
 .logo {
-    font-size: 1.8em;
-    font-weight: 700;
+    font-size: 3.5em;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    letter-spacing: 6px;
+    color: #ff0000;
+    text-shadow: 0 0 25px #fff, 0 0 50px #ff0000, 0 0 75px #0000ff;
+    animation: neonFlicker 0.4s infinite;
 }
 
-/* Content Styles */
+/* Content Overload */
 .content {
     position: relative;
     z-index: 2;
     text-align: center;
     padding: 20px;
-    animation: fadeInUp 1s ease-out;
+    animation: shake 0.15s infinite;
 }
 
 h1 {
-    font-size: 4.5em;
-    font-weight: 700;
+    font-size: 12em;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 12px;
     margin: 0;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-    animation: slideIn 1.2s ease-out;
+    color: #fff;
+    text-shadow: 0 0 40px #ff0000, 0 0 60px #0000ff, 0 0 80px #ffffff;
+    animation: explodeIn 1.5s infinite;
 }
 
 .slogan {
-    font-size: 1.6em;
-    font-weight: 400;
+    font-size: 3.5em;
+    font-weight: 900;
     font-style: italic;
-    margin: 15px 0;
-    opacity: 0.9;
-    animation: fadeIn 1.5s ease-out;
+    margin: 20px 0;
+    color: gold;
+    text-shadow: 0 0 25px #000;
+    animation: flash 0.4s infinite;
 }
 
 .mission {
-    font-size: 1.3em;
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.6;
-    opacity: 0.85;
-    animation: fadeIn 1.8s ease-out;
+    font-size: 2.5em;
+    max-width: 1000px;
+    margin: 30px auto;
+    line-height: 1.5;
+    color: #fff;
+    text-shadow: 0 0 20px #ff0000;
+    animation: scrollUp 8s infinite linear;
 }
 
 .cta-button {
-    padding: 15px 40px;
-    font-size: 1.3em;
-    font-weight: 700;
+    padding: 35px 90px;
+    font-size: 3em;
+    font-weight: 900;
     text-transform: uppercase;
-    background: linear-gradient(45deg, #003087, #005cbf);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
+    background: linear-gradient(45deg, #ff0000, #ffffff, #0000ff);
+    color: #000;
+    border: 6px solid gold;
+    border-radius: 100px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    animation: bounceIn 2s ease-out;
+    box-shadow: 0 0 60px #ff0000, 0 0 120px #0000ff;
+    transition: all 0.2s ease;
+    animation: insaneBounce 0.4s infinite;
 }
 
 .cta-button:hover {
-    background: linear-gradient(45deg, #005cbf, #007bff);
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7), 0 0 40px rgba(0, 123, 255, 0.3);
-    transform: translateY(-3px);
+    background: linear-gradient(45deg, #00ff00, #ffff00, #ff00ff);
+    transform: scale(1.6) rotate(15deg);
+    box-shadow: 0 0 200px #ffffff;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(50px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* Pete-Centric Animations */
+@keyframes peteZoom {
+    0% { background-size: 200%; }
+    100% { background-size: 300%; }
 }
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateX(-100px); }
-    100% { opacity: 1; transform: translateX(0); }
+@keyframes peteSpin {
+    0% { background-position: center center; transform: rotate(0deg); }
+    100% { background-position: center center; transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
+@keyframes peteFlash {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes peteMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Other Over-the-Top Animations */
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes neonFlicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
     100% { opacity: 1; }
 }
 
-@keyframes bounceIn {
-    0% { opacity: 0; transform: scale(0.8); }
-    60% { opacity: 1; transform: scale(1.1); }
-    100% { opacity: 1; transform: scale(1); }
+@keyframes explodeIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Confirmation Page Styles (Unchanged) */
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes scrollUp {
+    0% { transform: translateY(150px); opacity: 0; }
+    50% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-150px); opacity: 0; }
+}
+
+@keyframes insaneBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-60px) rotate(5deg); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-15px); }
+    50% { transform: translateX(15px); }
+    75% { transform: translateX(-15px); }
+    100% { transform: translateX(0); }
+}
+
+/* Confirm Page Base Styles */
 .confirm-body {
     margin: 0;
     padding: 0;
@@ -137,47 +205,155 @@ h1 {
     align-items: center;
     position: relative;
     overflow: hidden;
+    background: #000;
+    animation: pulseBackground 1s infinite;
 }
 
 .background-gif {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 150%; /* Oversized for dramatic zoom */
+    height: 150%;
     object-fit: cover;
     z-index: 0;
+    animation: jetZoom 4s infinite alternate;
 }
 
+/* Explosive Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.6), rgba(0, 0, 255, 0.6), rgba(255, 255, 255, 0.6));
+    z-index: 1;
+    animation: gradientShift 1.5s infinite;
+}
+
+/* Jet Flyby Overlay */
+.jet-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('f22-silhouette.png') no-repeat; /* Assume a jet silhouette image */
+    background-size: 50%;
+    z-index: 1;
+    animation: jetFlyby 2s infinite linear;
+}
+
+/* Content Overload */
 .confirm-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-shadow: 0 0 20px #ff0000, 0 0 40px #0000ff;
+    animation: shake 0.2s infinite;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 6em;
+    font-weight: 900;
+    text-transform: uppercase;
     margin-bottom: 20px;
+    color: #ff0000;
+    text-shadow: 0 0 30px #fff, 0 0 50px #ff0000;
+    animation: explodeIn 1s infinite;
 }
 
+.warning {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: gold;
+    text-shadow: 0 0 15px #000;
+    animation: flash 0.5s infinite;
+}
+
+/* Buttons of Doom */
 .confirm-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    margin: 10px;
-    background-color: rgba(85, 85, 85, 0.8);
-    color: white;
-    border: none;
-    border-radius: 5px;
+    padding: 25px 60px;
+    font-size: 2.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 5px solid #fff;
+    border-radius: 50px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    animation: insaneBounce 0.5s infinite;
 }
 
-.confirm-button:hover {
-    background-color: rgba(119, 119, 119, 0.8);
+.yes-button {
+    background: linear-gradient(45deg, #00ff00, #ffff00);
+    color: #000;
+    box-shadow: 0 0 40px #00ff00;
 }
 
-/* Trump Page Styles (Unchanged) */
+.yes-button:hover {
+    background: linear-gradient(45deg, #ffff00, #00ff00);
+    transform: scale(1.3) rotate(10deg);
+    box-shadow: 0 0 100px #00ff00;
+}
+
+.no-button {
+    background: linear-gradient(45deg, #ff0000, #000000);
+    color: #fff;
+    box-shadow: 0 0 40px #ff0000;
+}
+
+.no-button:hover {
+    background: linear-gradient(45deg, #000000, #ff0000);
+    transform: scale(1.3) rotate(-10deg);
+    box-shadow: 0 0 100px #ff0000;
+}
+
+/* Over-the-Top Animations */
+@keyframes pulseBackground {
+    0% { filter: brightness(100%); }
+    50% { filter: brightness(200%); }
+    100% { filter: brightness(100%); }
+}
+
+@keyframes jetZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); }
+}
+
+@keyframes jetFlyby {
+    0% { background-position: -100% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+@keyframes explodeIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes insaneBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+/* Trump Page Base Styles */
 .trump-body {
     background: #000;
     height: 100vh;
@@ -185,46 +361,129 @@ h2 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    animation: pulseBackground 1s infinite;
 }
 
-.trump-content {
-    text-align: center;
-}
-
+/* Trump Image Overload */
 .trump-image {
-    width: 500px;
-    height: 500px;
-    animation: rotatePan 3s infinite linear;
+    width: 700px;
+    height: 700px;
+    animation: rotatePan 2s infinite linear, explodeIn 1s infinite;
+    filter: drop-shadow(0 0 50px #ff0000);
 }
 
+/* Flash Text Madness */
 .flash-text {
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 5em;
+    font-weight: 900;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.loser {
-    color: #ff0000;
-    animation: flash 1s infinite;
+    text-shadow: 0 0 30px #000, 0 0 50px #ff0000;
+    animation: flash 0.3s infinite;
 }
 
 .winner {
     color: #00ff00;
-    animation: flash 1s infinite;
+    text-shadow: 0 0 40px #ffff00, 0 0 60px #00ff00;
+}
+
+.loser {
+    color: #ff0000;
+    text-shadow: 0 0 40px #000, 0 0 60px #ff0000;
+}
+
+/* Victory/Shame Text */
+.victory-text, .shame-text {
+    font-size: 3em;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 20px #ff0000;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollUp 5s infinite linear;
+}
+
+/* Overlays */
+.trump-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('trump.webp') repeat;
+    background-size: 20%;
+    opacity: 0.4;
+    z-index: 1;
+    animation: trumpBarrage 3s infinite linear;
+}
+
+.sad-trump-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(255, 0, 0, 0.5));
+    z-index: 1;
+    animation: gradientShift 2s infinite;
+}
+
+/* Confetti for Yes */
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    animation: fall 3s linear;
+}
+
+/* Sad Trump Faces for No */
+.sad-trump {
+    position: absolute;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+    filter: grayscale(100%);
+    animation: fall 5s linear;
+}
+
+/* Animations */
+@keyframes trumpBarrage {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
 }
 
 @keyframes rotatePan {
     0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.3); }
+    50% { transform: rotate(180deg) scale(1.5); }
     100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes explodeIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 @keyframes flash {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes scrollUp {
+    0% { transform: translateY(100px) translateX(-50%); opacity: 0; }
+    50% { transform: translateY(0) translateX(-50%); opacity: 1; }
+    100% { transform: translateY(-100px) translateX(-50%); opacity: 0; }
 }

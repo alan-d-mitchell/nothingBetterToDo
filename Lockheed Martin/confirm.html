@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Are You Sure?</title>
+    <title>CONFIRM YOUR DESTINY!</title>
     <link rel="stylesheet" href="DoD.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 </head>
 <body class="confirm-body">
+    <div class="overlay"></div>
     <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGtxaXY1cmQycXMxeGtqemY1Yjlqejhvc2w0MDJvMmk5ZnI3bTNmbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LwewuDvNm6VFCSTh3w/giphy.gif" alt="F-22 Raptor GIF" class="background-gif">
+    <div class="jet-overlay"></div> <!-- Jet flyby effect -->
     <div class="confirm-content">
-        <h2>Are You Sure?</h2>
-        <a href="yes.html"><button class="confirm-button">Yes</button></a>
-        <a href="no.html"><button class="confirm-button">No</button></a>
+        <h2>ARE YOU READY TO UNLEASH THE RAPTORS?</h2>
+        <p class="warning">WARNING: THIS IS YOUR FINAL CHANCE TO JOIN THE ULTIMATE FREEDOM FORCE!</p>
+        <a href="yes.html"><button class="confirm-button yes-button">YES - DEPLOY NOW!</button></a>
+        <a href="no.html"><button class="confirm-button no-button">NO - RETREAT, COWARD!</button></a>
     </div>
-</body>
+    <audio autoplay loop>
+        <source src="jet-engine-roar.mp3" type="audio/mpeg">
+    </audio>
+<script src="confirm-script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91fcf28f5c96c004',t:'MTc0MTg4Mzc1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
