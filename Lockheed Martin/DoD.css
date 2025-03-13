@@ -1,0 +1,173 @@
+/* Main Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('pete-hegseth.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Replace with your Pete Hegseth image URL */
+body {
+    background-image: url('pete-hegseth.webp');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slogan {
+    font-size: 1.5em;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.mission {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #003087;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #005cbf;
+}
+
+/* Confirmation Page Styles */
+.confirm-body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the GIF fills the screen */
+    z-index: 0;
+}
+
+.confirm-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Better readability over GIF */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.confirm-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin: 10px;
+    background-color: rgba(85, 85, 85, 0.8); /* Slightly transparent for GIF visibility */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-button:hover {
+    background-color: rgba(119, 119, 119, 0.8);
+}
+
+/* Trump Page Styles */
+.trump-body {
+    background: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.trump-content {
+    text-align: center;
+}
+
+.trump-image {
+    width: 500px;
+    height: 500px;
+    animation: rotatePan 3s infinite linear;
+}
+
+.flash-text {
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.loser {
+    color: #ff0000;
+    animation: flash 1s infinite;
+}
+
+.winner {
+    color: #00ff00;
+    animation: flash 1s infinite;
+}
+
+@keyframes rotatePan {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.3); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
